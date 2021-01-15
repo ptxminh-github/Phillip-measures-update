@@ -1,3 +1,11 @@
+/*
+# HEDIS FUH (Follow-up After Hospitalization for Mental Illness) - HEDIS 2020
+RESULT
+
+# Author: Minh Phan, Philip Sylling
+Updated: 2021-1-14 | MP | Minor revisions. Point to [tmp] instead of [stage]
+Created: 2019 | PS
+*/ 
 
 USE [PHClaims];
 GO
@@ -266,7 +274,7 @@ CREATE TABLE #temp
 ,[follow_up_30_day] INT);
 
 INSERT INTO #temp
-EXEC [stage].[sp_perf_fuh_join_step]
+EXEC [tmp].[sp_perf_fuh_join_step]
  @measurement_start_date='2017-01-01'
 ,@measurement_end_date='2017-12-31';
 
